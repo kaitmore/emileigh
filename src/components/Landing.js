@@ -5,21 +5,22 @@ class Landing extends Component {
   constructor(props) {
     super(props)
   }
+
   render() {
     return (
-      <div style={{
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
-      }}>
+      <div>
         <video
           style={{
             objectFit: 'cover',
             width: '100%',
+            position: 'absolute',
+            top: '0',
+            zIndex: '-1',
             height: '100%',
-          }} autoPlay loop muted
-          src="http://kaitlinmoreno.com/testvid2.webm"
-        />
+          }} loop muted autoPlay
+        >
+          <source src="http://kaitlinmoreno.com/testvid2.webm" />
+        </video>
       </div>)
   }
 }
