@@ -12,6 +12,9 @@ import history from './history'
 import reducers from './reducers';
 
 import Main from './components/Main';
+import Events from './components/Events';
+
+import Media from './components/Media';
 import About from './components/About';
 import PostsIndex from './components/posts_index';
 import Landing from './components/Landing';
@@ -26,9 +29,9 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/about" component={About} />
-          {/* <Route path="/media" component={Media} />
           <Route path="/events" component={Events} />
-          <Route path="/contact" component={Contact} /> */}
+          <Route path="/media" component={Media} />
+          {/* <Route path="/contact" component={Contact} /> */}
         </Switch>
       </Main>
     </Router>

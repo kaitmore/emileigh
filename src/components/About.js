@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
-import { NavLinks, NavLink, Logo, Title, BioPhoto, BioText } from './style'
+import { NavLinks, NavLink, Logo, Title, BioPhoto, Text } from './style'
 import { fetchPosts } from '../actions/index';
 import { connect } from 'react-redux';
 
@@ -13,18 +13,31 @@ class About extends Component {
     this.props.fetchPosts();
   }
 
+  formatText = (text) => {
+    return text.split("//").map((chunk, i) => {
+      return <p key={i} style={{ fontSize: '18px', lineHeight: '25px' }}>{chunk}</p>
+    })
+  }
+
   render() {
-    let { aboutImg, aboutText } = this.props;
-    return (<div style={{ display: 'flex', height: '85vh' }} >
-      <BioPhoto src={aboutImg.length ? aboutImg[0].fields.image.url : ''} />
-      <BioText>{aboutImg.length ? aboutText[0].fields.content : ''}</BioText>
-    </div>)
+    let { about } = this.props;
+    return (
+      <div style={{ display: 'flex' }} >
+        <div>
+          <BioPhoto src={about.length ? about[0].fields.image.url : ''} />
+          <BioPhoto landscape src="../assets/images/dress_horiz.jpg" />
+        </div>
+        <Text>
+          <Title secondary>About</Title>
+          {about.length ? this.formatText(about[0].fields.content) : ''}
+        </Text>
+      </div>)
   }
 }
+
 function mapStateToProps(state) {
   return {
-    aboutImg: state.posts.all,
-    aboutText: state.posts.all
+    about: state.posts.all
   };
 }
 

@@ -11,13 +11,21 @@ const NavBar = (props) => {
         <img src={"../assets/images/bow.png"} style={{ width: 'auto', height: '25px', padding: '10px' }} />
       </Logo>
       <NavLinks>
-        {props.posts.map((post, i) => {
-          return <NavLink key={i}>
-            <Link to={`/${post.fields.title.toLowerCase()}`} style={{ color: '#000', textDecoration: 'none' }}>
-              {post.fields.title}
+        <NavLink>
+          <Link to={`/about`} style={{ color: '#000', textDecoration: 'none' }}>
+            About
             </Link>
-          </NavLink>
-        })}
+        </NavLink>
+        <NavLink><Link to={`/events`} style={{ color: '#000', textDecoration: 'none' }}>
+          Events
+            </Link> </NavLink>
+        <NavLink><Link to={`/media`} style={{ color: '#000', textDecoration: 'none' }}>
+          Media
+            </Link> </NavLink>
+        <NavLink><Link to={`/contact`} style={{ color: '#000', textDecoration: 'none' }}>
+          Contact
+            </Link>
+        </NavLink>
       </NavLinks>
     </Nav>
   )

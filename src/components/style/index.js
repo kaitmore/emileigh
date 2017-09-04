@@ -6,7 +6,7 @@ export const Nav = styled.div`
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  background: white;
+  background: transparent;
 `
 export const NavLinks = styled.ul`
   list-style-type: none;
@@ -40,19 +40,36 @@ export const Logo = styled.div`
 export const Title = styled.h1`
   font-family: 'PT Sans Narrow', sans-serif;
   letter-spacing: 2px;
-  color: #2b2b2b;
+  color: ${props => props.secondary ? '#8aa3a8' : '#2b2b2b'};
   text-transform: uppercase;
-  margin: 5px 30px 0 30px;
-  font-size: 24px;
-`
+  margin: ${props => props.secondary ? '0' : '5px 30px 0 30px'};
+  font-size: ${props => props.secondary ? '24px' : '30px'};
+    `
 export const BioPhoto = styled.img`
-  height:85vh;
-  width: 40vw;
+  width: ${props => props.right ? '45vw' : '35vw'};
+  margin:  ${props => props.landscape ? '0 5vw' : '5vw'};
   object-fit: cover;
 `
 
-export const BioText = styled.div`
-  height:85vh;
-  padding: 40px;
+export const Text = styled.div`
+  padding: 0 40px;
+  width: ${props => props.right ? '50vw' : 'auto'};
+  margin: 5vh 5vh 5vh 0; 
   overflow:scroll;
+`
+export const EventLink = styled.a`
+  font-size: 18px;
+  color: #b2c1c4;
+  text-decoration: none;
+  transition: color 1s linear;
+  &:hover{
+    color: #8aa3a8;
+  }
+`
+
+export const Date = styled.div`
+font-size: 20px;
+`
+export const Description = styled.div`
+font-size: 18px;
 `
