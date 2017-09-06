@@ -8,19 +8,8 @@ class Landing extends Component {
 
   render() {
     return (
-      <div>
-        <video
-          style={{
-            objectFit: 'cover',
-            width: '100%',
-            position: 'absolute',
-            top: '0',
-            zIndex: '-1',
-            height: '100%',
-          }} loop muted autoPlay
-        >
-          <source src="http://kaitlinmoreno.com/testvid2.webm" />
-        </video>
+      <div style ={{position: 'absolute', zIndex: '-1', top: '0', height: '100vh', width: '100vw'}}>
+        <img style = {{ height: 'inherit', width: 'inherit', objectFit: 'cover'}} src= "../assets/images/dress_horiz.jpg" />  
       </div>)
   }
 }

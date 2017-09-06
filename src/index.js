@@ -10,6 +10,7 @@ import promise from 'redux-promise';
 import thunkMiddleware from 'redux-thunk'
 import history from './history'
 import reducers from './reducers';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Main from './components/Main';
 import Events from './components/Events';
@@ -23,6 +24,7 @@ const middleware = applyMiddleware(thunkMiddleware, createLogger({ collapsed: tr
 const store = createStore(reducers, composeWithDevTools(middleware))
 
 ReactDOM.render(
+  <MuiThemeProvider>
   <Provider store={store}>
     <Router history={history} >
       <Main>
@@ -35,5 +37,6 @@ ReactDOM.render(
         </Switch>
       </Main>
     </Router>
-  </Provider>
+  </Provider> 
+  </MuiThemeProvider>
   , document.querySelector('.container'));

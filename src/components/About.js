@@ -25,7 +25,6 @@ class About extends Component {
       <div style={{ display: 'flex' }} >
         <div>
           <BioPhoto src={about.length ? about[0].fields.image.url : ''} />
-          <BioPhoto landscape src="../assets/images/dress_horiz.jpg" />
         </div>
         <Text>
           <Title secondary>About</Title>

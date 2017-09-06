@@ -43,8 +43,7 @@ export const fetchEvents = () => dispatch => {
 export const fetchMedia = () => dispatch => {
   axios.get(`${API_BASE_URL}/spaces/${API_SPACE_ID}/entries?access_token=${API_KEY}&content_type=media`)
     .then((media) => {
-      console.log(media);
-      return dispatch(getMedia(media.data.items))
+      return dispatch(getMedia(media.data.includes.Asset))
     })
 }
 
